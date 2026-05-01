@@ -1,0 +1,164 @@
+.features {
+    width: 100%;
+    max-width: 356px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.features-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+/* 
+.features-fill {
+    margin-bottom: 100px;
+} */
+
+.features-image {
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.features-overline {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+.features-title {
+    font-weight: 700;
+    font-size: 32px;
+    padding-bottom: 16px;
+}
+
+.features-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.625;
+    padding-bottom: 16px;
+}
+
+.features-label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.625;
+    padding-bottom: 12px;
+}
+
+.ft-lch {
+    padding-bottom: 23px;
+    margin: 0;
+}
+
+.support-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.support-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+.support-icon-wrapper {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    border: 2.92px solid #fff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.orange {
+    background: #ff9900;
+}
+
+.red {
+    background: #f03e3d;
+}
+
+.blue {
+    background: #4d8dff;
+}
+
+.support-icon {
+    width: 16px;
+    height: 12px;
+}
+
+.support-lchld {
+    padding-bottom: 0;
+}
+
+.features-the-lastchild {
+    padding-bottom: 54px;
+}
+
+
+/* =========================================
+   TABLET (from 768px)
+========================================= */
+
+@media (min-width: 768px) {
+    .features {
+        max-width: 600px;
+    }
+
+    .features-image {
+        max-width: 420px;
+        display: block;
+        justify-content: center;
+        margin: auto;
+    }
+}
+
+/* =========================================
+   DESKTOP (from 1440px)
+========================================= */
+
+@media screen and (min-width: 1440px) {
+    .features {
+        max-width: 1110px;
+    }
+
+    .features-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .features-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 84px;
+        align-items: center;
+    }
+
+    .reverse {
+        flex-direction: row-reverse;
+    }
+
+    .features-image {
+        max-width: 540px;
+        width: 100%;
+        height: 500px;
+        margin: 0;
+        padding: 0;
+    }
+}

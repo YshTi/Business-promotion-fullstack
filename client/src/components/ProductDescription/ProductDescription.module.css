@@ -1,0 +1,145 @@
+.prod-descr {
+    padding-bottom: 38px;
+}
+
+.prod-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    justify-self: center;
+    margin-bottom: 50px;
+    max-width: 332px;
+    width: 100%;
+}
+
+.prod-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.prod-icon-wrapper {
+    margin-bottom: 24px;
+    width: 40px;
+    height: 40px;
+}
+
+.prod-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    width: 240px;
+}
+
+.prod-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.prod-item-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.prod-item-text {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.625;
+}
+
+.prod-button {
+    display: flex;
+    justify-self: center;
+    width: 175px;
+}
+
+/* =========================================
+   TABLET (from 768px)
+========================================= */
+
+@media (min-width: 768px) {
+    .product {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .prod-title {
+        font-size: 38px;
+        max-width: 500px;
+    }
+
+    .prod-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 64px;
+    }
+
+    .prod-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .prod-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   DESKTOP (from 1440px)
+========================================= */
+
+@media (min-width: 1440px) {
+    .product {
+        max-width: 1110px;
+    }
+
+    .prod-descr {
+        padding-bottom: 0;
+    }
+
+    .prod-title {
+        font-size: 32px;
+        max-width: 539px;
+    }
+    
+    .prod-list {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .prod-icon-wrapper {
+        margin-bottom: 8px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .prod-item {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .prod-item-title {
+        font-size: 22px;
+        margin-top: 18px;
+        margin-bottom: 13px;
+    }
+
+    .prod-item-text {
+        text-align: left;
+    }
+}

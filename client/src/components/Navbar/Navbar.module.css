@@ -1,0 +1,154 @@
+/* hide desktop stuff */
+.menu,
+.actions {
+    display: none;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 32px;
+}
+
+/* show burger */
+.menu-icon {
+    display: flex;
+    align-items: center;
+    /* vertical center */
+    justify-content: center;
+    /* horizontal center */
+    padding-right: 14px;
+
+    width: 44px;
+    /* clickable area */
+    height: 44px;
+
+    cursor: pointer;
+}
+
+.menu {
+    max-width: 379px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.menu a{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.link {
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.link:focus {
+    outline: none;
+    font-weight: 600;
+}
+
+.active {
+    font-weight: 600;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   TABLET (from 768px)
+========================================= */
+
+@media (min-width: 768px) {
+    .navbar {
+        height: 80px;
+    }
+
+    .logo-wrapper {
+        gap: 12px;
+        padding-left: 72px;
+    }
+
+    .menu-icon {
+        padding-right: 32px;
+    }
+}
+
+/* =========================================
+   DESKTOP (from 1440px)
+========================================= */
+
+@media (min-width: 1440px) {
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .logo-wrapper {
+        gap: 12px;
+        padding-left: 146px;
+    }
+
+    .menu {
+        display: flex;
+        gap: 24px;
+        padding-left: 237px;
+        padding-right: 80px;
+    }
+    
+    .actions {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .menu-icon {
+        display: none;
+    }
+
+    .actions {
+        padding-right: 144px;
+        gap: 24px;
+    }
+
+    .signIn {
+        border: 1px solid #bcd0e5;
+        border-radius: 4px;
+        width: 102px;
+        height: 43px;
+        padding: 0;
+        background: transparent;
+        color: #173a56;
+        justify-content: center;
+        font-weight: 600;
+    }
+
+    .signUp {
+        width: 110px;
+        height: 43px;
+        padding: 0;
+        justify-content: center;
+        font-weight: 600;
+    }
+}

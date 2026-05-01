@@ -1,0 +1,197 @@
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 369px;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.hero-fill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-icon-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* space between icon and text */
+}
+
+.hero-link {
+    font-weight: 600;
+    font-size: 16px;
+    color: #02897a;
+    text-decoration: underline;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 311px;
+    height: auto;
+    margin: 0 auto 11px auto;
+    display: block;
+}
+
+.hero-title {
+    max-width: 369px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.66667;
+    text-align: center;
+    color: #22343d;
+    margin: auto;
+}
+
+.hero-text {
+    font-size: 18px;
+    line-height: 1.55556;
+    color: #6b7280;
+    margin: 16px 21px;
+    text-align: center;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    max-width: 335px;
+    width: 100%;
+}
+
+.button-start {
+    max-width: 142px;
+    width: 100%;
+}
+
+@media screen and (max-width: 370px) {
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .button-start {
+        max-width: 110px;
+    }
+}
+
+.video-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-weight: 600;
+    font-size: 16px;
+    color: #02897a;
+
+    text-decoration: underline;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.play-icon {
+    width: 18px;
+    height: 20px;
+
+    transition: transform 0.2s ease;
+}
+
+.video-link:hover {
+    color: #026d63;
+    transform: scale(1.05);
+}
+
+.video-link:hover .play-icon {
+    transform: scale(1.15);
+}
+
+.video-link:focus-visible {
+    color: #03a58f;
+    outline: none;
+}
+
+
+/* =========================================
+   TABLET (from 768px)
+========================================= */
+
+@media (min-width: 768px) {
+    .hero-content {
+        max-width: 600px;
+        margin-top: 30px;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .hero-title {
+        font-size: 42px;
+        line-height: 1.4;
+    }
+
+    .hero-text {
+        font-size: 20px;
+        margin: 20px auto;
+        max-width: 500px;
+    }
+}
+
+/* =========================================
+   DESKTOP (from 1440px)
+========================================= */
+
+@media (min-width: 1440px) {
+    .hero-content {
+        flex-direction: row-reverse;
+        max-width: 1110px;
+        gap: 35px;
+        margin-top: 25px;
+    }
+
+    .hero-image {
+        max-width: 610px;
+        margin: 0;
+    }
+
+    .hero-fill {
+        max-height: 331px;
+        margin: auto;
+        align-items: flex-start;
+    }
+
+    .hero-title {
+        text-align: left;
+        margin: 0;
+        font-size: 40px;
+        line-height: 1.5;
+    }
+
+    .hero-text {
+        text-align: left;
+        font-size: 18px;
+        line-height: 1.55556;
+        margin: 18px auto 45px auto;
+    }
+
+    .hero-buttons {
+        max-width: 372px;
+        gap: 30px;
+    }
+
+    .button-start {
+        width: 178px;
+    }
+
+    .hero-link {
+        font-size: 16px;
+    }
+}

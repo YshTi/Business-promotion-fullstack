@@ -1,0 +1,333 @@
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-4px);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.footer {
+    width: 100%;
+    margin: auto;
+}
+
+/* ===== TOP ===== */
+.top {
+    max-width: 325px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 32px;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-text-footer {
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.logo-footer:hover {
+    opacity: 0.8;
+}
+
+/* ===== BRAND ===== */
+.brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-footer {
+    font-weight: 700;
+    font-size: 20px;
+    color: #173a56;
+}
+
+.socials {
+    display: flex;
+    gap: 16px;
+}
+
+.socials-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 40px;
+    height: 40px;
+    
+    border-radius: 50%;
+    background: #edfffc;
+    
+    cursor: pointer;
+    transform: all 0.2s ease;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: #02897a;
+    transform: all 0.2s ease;
+    pointer-events: none;
+}
+
+.socials-link:hover,
+.socials-link:hover .icon{
+    background: #02897a;
+    color: #fff;
+}
+
+/* ===== COLUMNS ===== */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.column h4 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+    align-self: center;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 2.1875;
+    text-align: center;
+    color: #22343d;
+    text-decoration: none;
+}
+
+/* ===== SUBSCRIBE ===== */
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 325px;
+    align-items: stretch;
+}
+
+.subscribe p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 280px;
+    align-self: center;
+    margin-bottom: 34px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 28px;
+    transition: all 0.2s ease;
+    color: #02897A;
+}
+
+.input {
+    height: 48px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #bcd0e5;
+    border-radius: 4px;
+    padding-left: 42px;
+    padding-right: 12px;
+    transition: all 0.2s ease;
+}
+
+.input.input-error,
+.input.input-error:focus {
+    border: 1px solid #ff4d4f;
+    outline: none;
+}
+
+.icon-error {
+    color: #ff4d4f;
+}
+
+.error {
+    font-size: 12px;
+    color: #ff4d4f;
+    margin-top: 5px;
+}
+
+.input:hover {
+    box-shadow: 0 6px 16px rgba(2, 137, 122, 0.3);
+}
+
+.input:focus {
+    outline: none;
+    padding-left: 12px;
+    border-color: #02897a;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+}
+
+.input-wrapper:focus-within .input-icon {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+}
+
+.button-footer {
+    margin-top: 21px;
+    width: 131px;
+    align-self: center;
+    transition: all 0.2s ease;
+}
+
+.button-locked {
+    background: #ff4d4f;
+    color: #fff;
+    cursor: not-allowed;
+    animation: shake 0.3s;
+    opacity: 0.8;
+}
+
+.button-footer:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* ===== BOTTOM ===== */
+.bottom {
+    margin: 44px auto 45px auto;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.875;
+    width: 100%;
+    max-width: 361px;
+}
+
+/* =========================================
+   TABLET (from 768px)
+========================================= */
+
+@media (min-width: 768px) {
+    .top {
+        max-width: 700px;
+        gap: 40px;
+    }
+
+    .brand {
+        gap: 30px;
+    }
+
+    .subscribe {
+        max-width: 400px;
+    }
+
+    .bottom {
+        max-width: 500px;
+    }
+
+    .column a {
+        font-size: 17px;
+    }
+    
+    .subscribe p {
+        font-size: 22px;
+    }
+}
+
+/* =========================================
+   DESKTOP (from 1440px)
+========================================= */
+
+@media (min-width: 1440px) {
+    .top {
+        flex-direction: row;
+        max-width: 1110px;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .logo-img-footer {
+        width: 40px;
+        height: 36px;
+    }
+
+    .logo-text-footer {
+        font-size: 30px;
+    }
+
+    .subscribe {
+        max-width: 325px;
+    }
+
+    .column {
+        font-size: 16px;
+        line-height: 2.1875;
+    }
+
+    .column h4 {
+        align-self: self-start;
+    }
+
+    .nav-link {
+        justify-content: left;
+    }
+
+    .subscribe p {
+        text-align: left;
+        align-self: self-start;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .button-footer {
+        margin-top: 25px;
+        align-self: self-start;
+    }
+
+    .bottom {
+        margin: 16px auto 40px auto;
+        width: 100%;
+        max-width: 394px;
+    }
+}

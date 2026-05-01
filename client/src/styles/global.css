@@ -1,0 +1,92 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #22343d;
+}
+
+ul, h1, h2, h3, h4, h5, h6, p, a {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #22343d;
+}
+
+.container {
+  width: 100%;
+  min-width: 310px;
+  max-width: 411px;
+  margin: auto auto 100px auto;
+}
+
+.button {
+  height: 53px;
+  padding: 15px 0 14px 0;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  background: #02897a;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  box-shadow: 0 6px 16px rgba(2, 137, 122, 0.3);
+  transform: translateY(-1px);
+}
+
+.button:focus {
+  background: #03a58f;
+  /* slightly lighter */
+  outline: none;
+}
+
+.button:focus-visible {
+  background: #2edec6;
+}
+
+.logo-img {
+  object-fit: contain;
+  width: 32px;
+  height: 29px;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 0.93333;
+  color: #173a56;
+}
+
+/* =========================================
+   TABLET (from 768px)
+========================================= */
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* =========================================
+   DESKTOP (from 1440px)
+========================================= */
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+}
