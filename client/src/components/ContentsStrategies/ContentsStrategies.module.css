@@ -1,0 +1,151 @@
+.contents {
+    width: 100%;
+}
+
+.wrapper {
+    max-width: 349px;
+    margin-bottom: 58px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    margin-bottom: 8px;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.subtitle {
+    max-width: 349px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.625;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card {
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.image {
+    display: block;
+    width: 348px;
+    height: 185px;
+    object-fit: cover;
+    justify-self: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.cardBody {
+    padding: 24px 0 0;
+}
+
+.meta {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+.meta span {
+    font-weight: 700;
+}
+
+.cardTitle {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.67;
+    margin-bottom: 40px;
+}
+
+.featuredTitle {
+    color: #02897a;
+}
+
+.dots {
+    display: none;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+    .wrapper {
+        max-width: 600px;
+    }
+
+    .title {
+        margin-bottom: 16px;
+    }
+    
+    .subtitle {
+        max-width: 693px;
+    }
+
+    .list {
+        gap: 30px;
+        align-items: center;
+    }
+
+    .card {
+        width: calc((100% - 30px));
+        border: 1px solid #dedede;
+        border-radius: 8px;
+    }
+
+    .image {
+        width: 100%;
+        height: 300px;
+    }
+
+    .cardBody {
+        padding: 24px;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1440px) {
+    .wrapper {
+        max-width: 1110px;
+        margin-bottom: 170px;
+    }
+
+    .title {
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        max-width: 465px;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    .list {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 30px;
+    }
+
+    .card {
+        width: calc((100% - 60px) / 3);
+    }
+
+    .image {
+        width: 350px;
+        height: 185px;
+    }
+
+    .cardTitle {
+        margin-bottom: 0;
+    }
+
+    .cardBody {
+        padding: 24px 27px 40px 27px;
+    }
+}

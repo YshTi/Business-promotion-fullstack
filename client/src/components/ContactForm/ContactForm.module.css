@@ -1,0 +1,97 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.contact-modal {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 36px 32px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    border: none;
+    background: transparent;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    color: #1f3135;
+}
+
+.contact-modal h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    color: #1f3135;
+}
+
+.contact-modal-subtitle {
+    margin: 0 0 24px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #5f6f73;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid #d7e1e3;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #008f7a;
+}
+
+.contact-submit-button {
+    margin-top: 6px;
+    border: none;
+    border-radius: 12px;
+    background: #008f7a;
+    color: #ffffff;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contact-submit-button:hover {
+    background: #007764;
+}
+
+.contact-status {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #008f7a;
+}

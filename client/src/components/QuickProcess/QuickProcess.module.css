@@ -1,0 +1,169 @@
+.quickProcess {
+    width: 100%;
+    margin: 41px auto 100px auto;
+    background: #ffffff;
+    text-align: center;
+}
+
+.quick-process-wrapper {
+    max-width: 348px;
+    margin: 0 auto;
+}
+
+.title {
+    margin: 0 0 8px;
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #22343d;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    margin: 0 auto 40px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #22343d;
+}
+
+.processList {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.processRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.expertImage {
+    width: 89px;
+    height: 89px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #e5e5e5;
+}
+
+.expertRed {
+    border: 4px solid #ff3b30;
+}
+
+.expertGreen {
+    border: 4px solid #02897a;
+}
+
+.expertBlue {
+    border: 4px solid #007c9d;
+}
+
+.expertPurple {
+    border: 4px solid #8a168f;
+}
+
+.processBubble {
+    width: 241px;
+    height: 70px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 24px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #22343d;
+
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 500;
+    text-align: center;
+
+    box-shadow: 2px 2px 10px 0 rgba(23, 58, 86, 0.15);
+}
+
+.contactExpertButton {
+    margin-top: 32px;
+    min-width: 216px;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+    .quick-process-wrapper {
+        max-width: 600px;
+    }
+
+    .processRow {
+        justify-content: flex-start;
+    }
+
+    .reverse {
+        justify-content: flex-end;
+    }
+}
+
+
+
+/* DESKTOP */
+@media screen and (min-width: 1440px) {
+    .quickProcess {
+        margin: 50px auto 100px auto;
+    }
+
+    .quick-process-wrapper {
+        max-width: 916px;
+    }
+
+    .title {
+        margin-bottom: 24px;
+        font-size: 32px;
+    }
+
+    .subtitle {
+        max-width: 542px;
+        margin-bottom: 40px;
+        font-size: 16px;
+    }
+
+    .processList {
+        height: 221px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-between;
+        gap: 25px;
+    }
+
+    .expertImage {
+        width: 98px;
+        height: 98px;
+    }
+
+    .processRow {
+        width: 408px;
+        height: 98px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .reverse {
+        justify-content: space-between;
+    }
+
+    .processBubble {
+        height: 50px;
+        width: 281px;
+    }
+
+    .contactExpertButton {
+        margin-top: 50px;
+    }
+}
