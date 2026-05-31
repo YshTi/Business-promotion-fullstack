@@ -1,6 +1,6 @@
-import { useState } from "react";
-import type { ChangeEvent, SyntheticEvent } from "react";
-import "./ContactForm.module.css";
+import { useEffect, useState } from "react";
+import type { ChangeEvent, SyntheticEvent, MouseEvent } from "react";
+import styles from "./ContactForm.module.css";
 
 type ContactFormProps = {
   onClose: () => void;
@@ -16,6 +16,31 @@ function ContactForm({ onClose }: ContactFormProps) {
 
   const [image, setImage] = useState<File | null>(null);
   const [status, setStatus] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  const handleOverlayClick = () => {
+    onClose();
+  };
+
+  const handleModalClick = (event: MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+  };
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -49,7 +74,7 @@ function ContactForm({ onClose }: ContactFormProps) {
     }
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("http://localhost:5050/api/contact", {
         method: "POST",
         body: data,
       });
@@ -57,7 +82,8 @@ function ContactForm({ onClose }: ContactFormProps) {
       const result = await response.json();
 
       if (result.success) {
-        setStatus("Request sent successfully!");
+        setIsSubmitted(true);
+        setStatus("");
 
         setFormData({
           name: "",
@@ -67,10 +93,6 @@ function ContactForm({ onClose }: ContactFormProps) {
         });
 
         setImage(null);
-
-        setTimeout(() => {
-          onClose();
-        }, 1000);
       } else {
         setStatus(result.message || "Something went wrong.");
       }
@@ -81,61 +103,106 @@ function ContactForm({ onClose }: ContactFormProps) {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="contact-modal">
-        <button className="modal-close-button" onClick={onClose}>
+    <div className={styles.overlay} onClick={handleOverlayClick}>
+      <div className={styles.modal} onClick={handleModalClick}>
+        <button
+          type="button"
+          className={styles.closeButton}
+          onClick={onClose}
+          aria-label="Close contact form"
+        >
           ×
         </button>
 
-        <h2>Contact our expert</h2>
+        {isSubmitted ? (
+          <div className={styles.success}>
+            <div className={styles.successIcon}>✓</div>
 
-        <p className="contact-modal-subtitle">
-          Tell us about your project and our expert will contact you.
-        </p>
+            <h2 className={styles.successTitle}>Thank you!</h2>
 
-        <form onSubmit={handleSubmit} className="contact-form">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+            <p className={styles.successText}>
+              Our expert will contact you within
+              2 working days.
+            </p>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+            <button
+              type="button"
+              className={`button ${styles.successButton}`}
+              onClick={onClose}
+            >
+              Close
+            </button>
+          </div>
+        ) : (
+          <>
+            <h2 className={styles.title}>Contact our expert</h2>
 
-          <input
-            type="text"
-            name="projectType"
-            placeholder="Project type"
-            value={formData.projectType}
-            onChange={handleChange}
-          />
+            <p className={styles.subtitle}>
+              Tell us about your project and our expert will contact you.
+            </p>
 
-          <textarea
-            name="message"
-            placeholder="Tell us about your project"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <input
+                className={styles.input}
+                type="text"
+                name="name"
+                placeholder="Your name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
 
-          <input type="file" accept="image/*" onChange={handleImageChange} />
+              <input
+                className={styles.input}
+                type="email"
+                name="email"
+                placeholder="Your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
 
-          <button type="submit" className="contact-submit-button">
-            Send request
-          </button>
+              <input
+                className={styles.input}
+                type="text"
+                name="projectType"
+                placeholder="Project type"
+                value={formData.projectType}
+                onChange={handleChange}
+              />
 
-          {status && <p className="contact-status">{status}</p>}
-        </form>
+              <textarea
+                className={styles.textarea}
+                name="message"
+                placeholder="Tell us about your project"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+
+              <label className={styles.fileLabel}>
+                Upload files
+                <input
+                  className={styles.fileInput}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                />
+              </label>
+
+              {image && <p className={styles.fileName}>{image.name}</p>}
+
+              <button
+                className={`button ${styles.submitButton}`}
+                type="submit"
+              >
+                Send request
+              </button>
+
+              {status && <p className={styles.status}>{status}</p>}
+            </form>
+          </>
+        )}
       </div>
     </div>
   );

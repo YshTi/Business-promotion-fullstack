@@ -23,7 +23,7 @@ function Feedback() {
   useEffect(() => {
     const fetchFeedback = async () => {
       try {
-        const response = await fetch("/api/feedback");
+        const response = await fetch("http://localhost:5050/api/feedback");
         const result = await response.json();
 
         if (result.success) {
