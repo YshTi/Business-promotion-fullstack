@@ -2,6 +2,12 @@ html {
   scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -56,6 +62,18 @@ a {
 
 .button:focus-visible {
   background: #2edec6;
+}
+
+.button-white {
+  background-color: #ffffff;
+  color: #02897a;
+  border-radius: 8px;
+}
+
+.button-white:hover {
+  background-color: #ffffff;
+  color: #02897a;
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.25);
 }
 
 .logo-img {

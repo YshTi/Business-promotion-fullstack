@@ -1,0 +1,166 @@
+.swiper :global(.swiper-slide:focus-visible) {
+    outline: 2px solid #02897a;
+    outline-offset: 4px;
+    border-radius: 5px;
+}
+
+.feedback {
+    max-width: 327px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 8px;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.68;
+}
+
+.subtitle {
+    margin: 0 auto 32px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.75;
+}
+
+.loading {
+    font-size: 16px;
+    color: #22343d;
+}
+
+/* Mobile: show all 3 cards normally */
+.mobileList {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.swiper {
+    display: none;
+}
+
+.card {
+    width: 100%;
+    padding: 27px 25px 23px 25px;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.stars {
+    margin-bottom: 16px;
+    padding-left: 2px;
+    color: #f3cd03;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.text {
+    margin-bottom: 16px;
+    color: #737373;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #bdbdbd;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.name {
+    color: #02897a;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.role {
+    color: #252b42;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+/* Tablet: Swiper, 2 cards visible */
+@media screen and (min-width: 768px) {
+    .feedback {
+        max-width: 700px;
+    }
+
+    .title {
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        max-width: 537px;
+    }
+
+    .mobileList {
+        display: none;
+    }
+
+    .swiper {
+        display: block;
+        width: 100%;
+        padding-bottom: 48px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .swiper :global(.swiper-pagination) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .swiper :global(.swiper-pagination-bullet) {
+        width: 10px;
+        height: 10px;
+        background-color: #efefef;
+        opacity: 1;
+        transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    }
+
+    .swiper :global(.swiper-pagination-bullet-active) {
+        width: 14px;
+        height: 14px;
+        background-color: #02897a;
+    }
+}
+
+/* Desktop: Swiper, 3 cards visible */
+@media screen and (min-width: 1440px) {
+    .feedback {
+        max-width: 100%;
+    }
+
+    .wrapper {
+        max-width: 1110px;
+    }
+
+    .swiper {
+        padding-bottom: 0;
+    }
+
+    .swiper :global(.swiper-pagination) {
+        display: none;
+    }
+}
