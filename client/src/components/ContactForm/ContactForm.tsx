@@ -49,7 +49,7 @@ function ContactForm({ onClose }: ContactFormProps) {
     }
 
     try {
-      const response = await fetch("http://localhost:5050/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         body: data,
       });
