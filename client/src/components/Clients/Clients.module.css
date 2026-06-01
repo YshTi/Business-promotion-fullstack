@@ -1,0 +1,178 @@
+.clients {
+    max-width: 355px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    padding-top: 50px;
+    margin-bottom: 81px;
+    text-align: center;
+}
+
+
+.title {
+    margin-bottom: 38px;
+    color: #22343d;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    align-items: center;
+    column-gap: 45px;
+    row-gap: 52px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+}
+
+.airbnb {
+    width: 159px;
+    height: 50px;
+    margin-right: 5px;
+}
+
+.google {
+    width: 146px;
+    height: 50px;
+}
+
+.microsoft {
+    width: 164px;
+    height: 34px;
+}
+
+.fedex {
+    width: 140px;
+    height: 42px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .list {
+        column-gap: 20px;
+        row-gap: 32px;
+    }
+
+    .airbnb {
+        width: 130px;
+        height: 41px;
+    }
+
+    .google {
+        width: 120px;
+        height: 41px;
+    }
+
+    .microsoft {
+        width: 150px;
+        height: 31px;
+    }
+
+    .fedex {
+        width: 120px;
+        height: 36.2px;
+    }
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+    .clients {
+        max-width: 700px;
+    }
+    
+    .wrapper {
+        padding-top: 50px;
+        margin-bottom: 117px;
+    }
+
+    .title {
+        margin-bottom: 50px;
+    }
+
+    .list {
+        max-width: 700px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .airbnb {
+        width: 120px;
+        height: auto;
+        margin-right: 0;
+    }
+
+    .google {
+        width: 120px;
+        height: auto;
+    }
+
+    .microsoft {
+        width: 160px;
+        height: auto;
+    }
+
+    .fedex {
+        width: 120px;
+        height: auto;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1440px) {
+    .clients {
+        max-width: 850px;
+    }
+    
+    .wrapper {
+        max-width: 850px;
+        padding-top: 100px;
+        margin-bottom: 117px;
+    }
+
+    .title {
+        margin-bottom: 50px;
+        font-size: 40px;
+    }
+
+    .list {
+        max-width: 850px;
+        height: 82px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 64px;
+    }
+
+    .airbnb {
+        width: 159px;
+        height: 50px;
+    }
+
+    .google {
+        width: 146px;
+        height: 50px;
+    }
+
+    .microsoft {
+        width: 213px;
+        height: 44px;
+    }
+
+    .fedex {
+        width: 140px;
+        height: 42px;
+    }
+}
