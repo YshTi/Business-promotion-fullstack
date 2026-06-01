@@ -2,11 +2,14 @@ import sprite from "../../assets/symbol-defs.svg";
 import styles from "./Hero.module.css";
 import heroImg from "../../../public/hero-img.svg";
 
-const Hero = () => {
+type HeroProps = {
+  onGetStartedClick?: () => void;
+};
+
+const Hero = ({ onGetStartedClick }: HeroProps) => {
   return (
     <section className={styles.hero}>
       <div className={`container ${styles["hero-content"]}`}>
-
         <img src={heroImg} alt="Hero" className={styles["hero-image"]} />
 
         <div className={styles["hero-fill"]}>
@@ -20,9 +23,14 @@ const Hero = () => {
           </p>
 
           <div className={styles["hero-buttons"]}>
-            <button className={`button ${styles["button-start"]}`}>
+            <button
+              type="button"
+              className={`button ${styles["button-start"]}`}
+              onClick={onGetStartedClick}
+            >
               Get started
             </button>
+
             <a href="https://www.youtube.com/" className={styles["video-link"]}>
               <svg className={styles["play-icon"]}>
                 <use href={`${sprite}#icon-play`} />

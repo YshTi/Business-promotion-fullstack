@@ -1,15 +1,28 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import sprite from "../../assets/symbol-defs.svg";
 import { NavLink, Link } from "react-router-dom";
+import AuthModal from "../AuthModal/AuthModal";
+
+type AuthMode = "signIn" | "signUp";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<AuthMode | null>(null);
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setOpen(false);
     document.body.style.overflow = "";
     document.documentElement.style.overflow = "";
+  }, []);
+
+  const openAuth = (mode: AuthMode) => {
+    closeMenu();
+    setAuthMode(mode);
+  };
+
+  const closeAuth = () => {
+    setAuthMode(null);
   };
 
   useEffect(() => {
@@ -30,7 +43,7 @@ const Navbar = () => {
       document.documentElement.style.overflow = "";
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [open]);
+  }, [open, closeMenu]);
 
   const handleLogoClick = () => {
     closeMenu();
@@ -98,8 +111,21 @@ const Navbar = () => {
           </ul>
 
           <div className={styles.actions}>
-            <button className={`button ${styles.signIn}`}>Sign In</button>
-            <button className={`button ${styles.signUp}`}>Sign Up</button>
+            <button
+              type="button"
+              className={`button ${styles.signIn}`}
+              onClick={() => openAuth("signIn")}
+            >
+              Sign In
+            </button>
+
+            <button
+              type="button"
+              className={`button ${styles.signUp}`}
+              onClick={() => openAuth("signUp")}
+            >
+              Sign Up
+            </button>
           </div>
 
           <button
@@ -192,11 +218,26 @@ const Navbar = () => {
           </ul>
 
           <div className={styles.mobileActions}>
-            <button className={`button ${styles.mobileSignIn}`}>Sign In</button>
-            <button className={`button ${styles.mobileSignUp}`}>Sign Up</button>
+            <button
+              type="button"
+              className={`button ${styles.mobileSignIn}`}
+              onClick={() => openAuth("signIn")}
+            >
+              Sign In
+            </button>
+
+            <button
+              type="button"
+              className={`button ${styles.mobileSignUp}`}
+              onClick={() => openAuth("signUp")}
+            >
+              Sign Up
+            </button>
           </div>
         </div>
       </div>
+
+      {authMode && <AuthModal mode={authMode} onClose={closeAuth} />}
     </>
   );
 };

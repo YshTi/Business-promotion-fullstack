@@ -7,6 +7,7 @@ type PricingTableProps = {
   subtitle?: string;
   plans?: PricingPlan[];
   variant?: "home" | "pricingPage";
+  onOrderClick?: () => void;
 };
 
 const defaultPlans: PricingPlan[] = [
@@ -43,6 +44,7 @@ function PricingTable({
   subtitle = "We offer competitive price",
   plans = defaultPlans,
   variant = "home",
+  onOrderClick,
 }: PricingTableProps) {
   return (
     <section
@@ -85,9 +87,11 @@ function PricingTable({
               </ul>
 
               <button
+                type="button"
                 className={`button ${
                   plan.isPopular ? "button-white" : ""
                 } ${styles.button}`}
+                onClick={onOrderClick}
               >
                 Order Now
               </button>
