@@ -1,0 +1,141 @@
+.faq {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.wrapper {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.title {
+    max-width: 326px;
+    margin: 0 auto 16px;
+    color: #22343d;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.subtitle {
+    max-width: 326px;
+    margin: 0 auto 6px;
+    color: #22343d;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.list {
+    max-width: 355px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.item {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.questionButton {
+    width: 100%;
+    padding: 24px 0 22px 0;
+
+    display: flex;
+    gap: 16px;
+
+    border: none;
+    background-color: transparent;
+
+    color: #22343d;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    text-align: left;
+}
+
+.questionButtonOpen {
+    padding-bottom: 16px;
+}
+
+.icon {
+    margin-top: 1px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #02897a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+
+    flex-shrink: 0;
+}
+
+.iconOpen {
+    font-size: 24px;
+}
+
+.question {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.answer {
+    padding-bottom: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+    .title {
+        max-width: 600px;
+    }
+
+    .subtitle {
+        max-width: 600px;
+    }
+
+    .list {
+        max-width: 700px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .wrapper {
+        max-width: 920px;
+        margin-bottom: 150px;
+    }
+
+    .title {
+        max-width: 700px;
+        font-size: 34px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        max-width: 700px;
+        margin-bottom: 34px;
+    }
+
+    .list {
+        max-width: 920px;
+    }
+
+    .questionButton {
+        padding: 16px 0 22px 0;
+    }
+
+    .questionButtonOpen {
+        padding-bottom: 14px;
+    }
+
+    .answer {
+        padding-bottom: 24px;
+    }
+}

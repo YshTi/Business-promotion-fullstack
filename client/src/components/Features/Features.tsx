@@ -1,8 +1,8 @@
 import styles from "./Features.module.css";
 import sprite from "../../assets/symbol-defs.svg";
-import FeaturesManagement from "../../../public/management-img.png";
-import FeaturesSupport from "../../../public/support-img.png";
-import FeaturesCollab from "../../../public/collaboration-img.png";
+import FeaturesManagement from "../../../public/management-img.svg";
+import FeaturesSupport from "../../../public/support-img.svg";
+import FeaturesCollab from "../../../public/collaboration-img.svg";
 
 const Features = () => {
   return (

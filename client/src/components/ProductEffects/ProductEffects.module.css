@@ -1,0 +1,168 @@
+.effects {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.wrapper {
+    max-width: 352px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.title {
+    max-width: 342px;
+    margin: 0 auto 33px;
+    color: #22343d;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picture {
+    display: block;
+    width: 100%;
+    max-width: 352px;
+    margin-bottom: 32px;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    width: 100%;
+    max-width: 352px;
+    margin-bottom: 32px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: left;
+}
+
+.item {
+    width: 100%;
+}
+
+.itemHeader {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.iconWrapper {
+    width: 52.94px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f4f5f7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.icon {
+    display: block;
+}
+
+.itemTitle {
+    color: #22343d;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.itemText {
+    color: #22343d;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+    .wrapper {
+        max-width: 700px;
+    }
+    
+    .title {
+        max-width: 650px;
+    }
+
+    .content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .list {
+        gap: 32px;
+    }
+
+    .picture {
+        max-width: 500px;
+    }
+
+    .image {
+        max-width: 500px;
+        margin-bottom: 0;
+    }
+
+    .list {
+        max-width: 540px;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1440px) {
+    .wrapper {
+        max-width: 1131px;
+        margin-bottom: 150px;
+    }
+
+    .title {
+        font-size: 34px;
+        max-width: 878px;
+        margin-bottom: 56px;
+    }
+
+    .content {
+        max-width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .picture {
+        max-width: 528px;
+        margin-bottom: 0;
+    }
+
+    .image {
+        max-width: 528px;
+        margin: 24px 0 14px 0;
+    }
+
+    .list {
+        max-width: 543px;
+        gap: 32px;
+    }
+
+    .itemHeader {
+        margin-bottom: 16px;
+        gap: 14px;
+    }
+
+    .iconWrapper {
+        width: 50px;
+    }
+}

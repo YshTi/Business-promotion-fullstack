@@ -1,6 +1,6 @@
 import sprite from "../../assets/symbol-defs.svg";
 import styles from "./Hero.module.css";
-import heroImg from "../../../public/hero-img.png";
+import heroImg from "../../../public/hero-img.svg";
 
 const Hero = () => {
   return (
