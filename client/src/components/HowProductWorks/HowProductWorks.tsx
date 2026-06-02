@@ -1,5 +1,9 @@
 import styles from "./HowProductWorks.module.css";
 
+type HowProductWorksProps = {
+  onQuestionClick?: () => void;
+};
+
 const steps = [
   {
     id: 1,
@@ -27,7 +31,7 @@ const steps = [
   },
 ];
 
-function HowProductWorks() {
+function HowProductWorks({ onQuestionClick }: HowProductWorksProps) {
   return (
     <section className={styles.howWorks}>
       <div className={`container ${styles.wrapper}`}>
@@ -54,7 +58,13 @@ function HowProductWorks() {
           ))}
         </ul>
 
-        <button className={`button ${styles.button}`}>Get in touch with us</button>
+        <button
+          type="button"
+          className={`button ${styles.button}`}
+          onClick={onQuestionClick}
+        >
+          Ask our expert
+        </button>
       </div>
     </section>
   );

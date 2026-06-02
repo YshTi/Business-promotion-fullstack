@@ -1,6 +1,10 @@
 import styles from "./Enterprise.module.css";
 
-function Enterprise() {
+type EnterpriseProps = {
+  onContactClick?: () => void;
+};
+
+function Enterprise({ onContactClick }: EnterpriseProps) {
   return (
     <section className={styles.enterprise}>
       <div className={`container ${styles.wrapper}`}>
@@ -15,7 +19,11 @@ function Enterprise() {
           projects.
         </p>
 
-        <button className={`button ${styles.button}`}>
+        <button
+          type="button"
+          className={`button ${styles.button}`}
+          onClick={onContactClick}
+        >
           Get in touch with us
         </button>
       </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./PricingTable.module.css";
 import type { PricingPlan } from "../../types/pricing";
 
@@ -46,6 +47,16 @@ function PricingTable({
   variant = "home",
   onOrderClick,
 }: PricingTableProps) {
+  const defaultSelectedPlan =
+    plans.find((plan) => plan.isPopular)?.id ?? plans[0].id;
+
+  const [selectedPlanId, setSelectedPlanId] = useState(defaultSelectedPlan);
+
+  const handleOrderClick = (planId: number) => {
+    setSelectedPlanId(planId);
+    onOrderClick?.();
+  };
+
   return (
     <section
       className={`${styles.pricing} ${
@@ -60,43 +71,49 @@ function PricingTable({
         <p className={styles.subtitle}>{subtitle}</p>
 
         <ul className={styles.list}>
-          {plans.map((plan) => (
-            <li
-              className={`${styles.card} ${
-                plan.isPopular ? styles.highlighted : ""
-              }`}
-              key={plan.id}
-            >
-              <h3 className={styles.planName}>{plan.title}</h3>
+          {plans.map((plan) => {
+            const isSelected = selectedPlanId === plan.id;
 
-              <p className={styles.description}>{plan.description}</p>
-
-              <div className={styles.priceBox}>
-                <span className={styles.price}>{plan.price}</span>
-
-                <div className={styles.priceInfo}>
-                  <span className={styles.currency}>$</span>
-                  <span className={styles.period}>{plan.period}</span>
-                </div>
-              </div>
-
-              <ul className={styles.features}>
-                {plan.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-
-              <button
-                type="button"
-                className={`button ${
-                  plan.isPopular ? "button-white" : ""
-                } ${styles.button}`}
-                onClick={onOrderClick}
+            return (
+              <li
+                className={`${styles.card} ${
+                  isSelected ? styles.highlighted : ""
+                }`}
+                key={plan.id}
+                onPointerEnter={() => setSelectedPlanId(plan.id)}
+                onFocusCapture={() => setSelectedPlanId(plan.id)}
               >
-                Order Now
-              </button>
-            </li>
-          ))}
+                <h3 className={styles.planName}>{plan.title}</h3>
+
+                <p className={styles.description}>{plan.description}</p>
+
+                <div className={styles.priceBox}>
+                  <span className={styles.price}>{plan.price}</span>
+
+                  <div className={styles.priceInfo}>
+                    <span className={styles.currency}>$</span>
+                    <span className={styles.period}>{plan.period}</span>
+                  </div>
+                </div>
+
+                <ul className={styles.features}>
+                  {plan.features.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+
+                <button
+                  type="button"
+                  className={`button ${
+                    isSelected ? "button-white" : ""
+                  } ${styles.button}`}
+                  onClick={() => handleOrderClick(plan.id)}
+                >
+                  Order Now
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

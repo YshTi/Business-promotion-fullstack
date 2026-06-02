@@ -17,21 +17,13 @@ export default function Product() {
   return (
     <>
       <Hero onGetStartedClick={() => setAuthMode("signUp")} />
-
       <ProductDescription onSignUpClick={() => setAuthMode("signUp")} />
-
       <Features />
-
       <QuickProcess />
-
       <ContentsStrategies />
-
       <PricingTable onOrderClick={() => setAuthMode("signUp")} />
-
       <Feedback />
-
-      <Promo />
-
+      <Promo onGetThisClick={() => setAuthMode("signUp")} />
       <Footer />
 
       {authMode && (

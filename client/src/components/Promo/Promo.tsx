@@ -1,6 +1,10 @@
 import styles from "./Promo.module.css";
 
-function Promo() {
+type PromoProps = {
+  onGetThisClick?: () => void;
+};
+
+function Promo({ onGetThisClick }: PromoProps) {
   return (
     <section className={styles.promo}>
       <div className={`container ${styles.wrapper}`}>
@@ -9,7 +13,11 @@ function Promo() {
             Join 100 Companies who boost their business with Product
           </h2>
 
-          <button className={`button button-white ${styles.button}`}>
+          <button
+            type="button"
+            className={`button button-white ${styles.button}`}
+            onClick={onGetThisClick}
+          >
             Get This
           </button>
         </div>

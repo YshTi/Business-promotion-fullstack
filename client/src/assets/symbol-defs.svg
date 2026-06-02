@@ -111,6 +111,10 @@
                 stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
                 d="M23.333 8.667h0.013"></path>
         </symbol>
+        <symbol id="icon-mail" viewBox="0 0 1920 1920">
+            <path fill="#02897A" style="fill: var(--color-main, #02897A)" fill-rule="evenodd"
+                d="M0 1694.235h1920V226H0v1468.235ZM112.941 376.664V338.94H1807.06v37.723L960 1111.233l-847.059-734.57ZM1807.06 526.198v950.513l-351.134-438.89-88.32 70.475 378.353 472.998H174.042l378.353-472.998-88.32-70.475-351.134 438.89V526.198L960 1260.768l847.059-734.57Z" />
+        </symbol>
         <symbol id="icon-menu" viewBox="0 0 29 32">
             <path fill="none" stroke="#173a56" style="stroke: var(--menu-icon, #173A56)" stroke-linejoin="round"
                 stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.0968" d="M3.613 16h21.677"></path>

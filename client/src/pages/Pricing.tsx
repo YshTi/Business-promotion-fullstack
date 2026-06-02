@@ -7,9 +7,11 @@ import FAQ from "../components/FAQ/Faq";
 import Promo from "../components/Promo/Promo";
 import Footer from "../components/Footer/Footer";
 import AuthModal from "../components/AuthModal/AuthModal";
+import CustomPlanForm from "../components/CustomPlanForm/CustomPlanForm";
 
 const Pricing = () => {
   const [authMode, setAuthMode] = useState<"signIn" | "signUp" | null>(null);
+  const [isCustomPlanOpen, setIsCustomPlanOpen] = useState(false);
 
   return (
     <>
@@ -21,18 +23,18 @@ const Pricing = () => {
         onOrderClick={() => setAuthMode("signUp")}
       />
 
-      <Enterprise />
-
+      <Enterprise onContactClick={() => setIsCustomPlanOpen(true)} />
       <ProductEffects />
-
       <FAQ />
-
-      <Promo />
-
+      <Promo onGetThisClick={() => setAuthMode("signUp")} />
       <Footer />
 
       {authMode && (
         <AuthModal mode={authMode} onClose={() => setAuthMode(null)} />
+      )}
+
+      {isCustomPlanOpen && (
+        <CustomPlanForm onClose={() => setIsCustomPlanOpen(false)} />
       )}
     </>
   );
